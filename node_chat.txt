@@ -1,2 +1,12 @@
-npm i socket.io express
+npm i socket.io express nunjucks morgan
 npm i -D nodemon
+
+const app = require("express")();
+const httpServer = require("http").createServer(app);
+const options = { /* ... */ };
+const io = require("socket.io")(httpServer, options);
+
+io.on("connection", socket => { /* ... */ });
+
+httpServer.listen(3000);
+// WARNING !!! app.listen(3000); will not work here, as it creates a new HTTP server
