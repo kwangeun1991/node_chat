@@ -1,0 +1,2 @@
+npm i socket.io express
+npm i -D nodemon
